@@ -1,0 +1,1 @@
+FastAPI service for calculating the winner's points in the game "Short Backgammon".
