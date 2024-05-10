@@ -30,10 +30,24 @@ The service performs calculation of the game score and determines the type of vi
 # <a id="projectstructure"></a> Project structure
 - `src` - directory containing project files.
 - - `score` - directory containing the files necessary for calculating the game score and the related endpoints.
+- - - `additional_validators.py` - additional validators to check JSON request for calculate_score endpoint for errors.
+- - - `router.py` - endpoint module.
+- - - `schemas.py` - module describing pydantic schemes.
+- - - `score_calculator.py` - module for calculating the number of points and type of victory.
 - - `tests` - directory with files tests.
-- - `main.py` - main file to run the application.
+- - - `integration_tests` - integration tests directory.
+- - - - `*.json` - test data sets.
+- - - - `test_api.py` - integration test suite.
+- - - `unit_tests` - unit tests directory.
+- - - - `*.json` - test data sets.
+- - - - `test_score_calculator.py` - set of unit tests for score_calculator.
+- - - `conftest.py` - module is responsible for configuring the tests.
+- - `exceptions.py` - custom exception module.
+- - `main.py` - main module to run the application.
 - `requirements.txt` - file with dependencies for pip manager.
-
+- `docker-compose.yml` - docker-compose file for deploying an application to a container.
+- `Dockerfile` - docker file for build app.
+- `pytest.ini` - pytest configuration file.
 
 
 
