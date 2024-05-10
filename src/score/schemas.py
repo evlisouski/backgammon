@@ -14,7 +14,7 @@ class SBoardPoint(BaseModel):
 
 class SBoard(BaseModel):
     bar_counts: Dict[UUID, Annotated[int, Field(ge=0, le=23)]] = {uuid.uuid4(): 1, }
-    points: Annotated[List[SBoardPoint], Field(min_length=24, max_length=24)]        
+    points: Annotated[List[SBoardPoint], Field(min_length=24, max_length=24)]
 
 
 class SGameResultInput(BaseModel):
