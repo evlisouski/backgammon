@@ -6,6 +6,6 @@ app = FastAPI()
 app.include_router(router_score)
 
 
-@app.get("/")
-def get_main_page():
-    return "The main page!"
+@app.get("/health_check", tags=["health_check"])
+def health_check():
+    return "OK"
