@@ -21,7 +21,7 @@ The service performs calculation of the game score and determines the type of vi
 - `oin` - the position of checkers at the end of the game, in which the defeated player has had time to discard at least 1 checker, while the winner has taken all of them off the board. Counts as 1 point.
 
 <div align="center">
-    <image src="./docs/Backgammon_(checker placement on the opponent's side).gif">
+    <image src="./docs/Backgammon_(checker placement on the opponent's side).png">
     <p> Fig. 1 - numbering of the playing field from the opponent's side</p>
 </div>
 
