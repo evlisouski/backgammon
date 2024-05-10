@@ -70,3 +70,7 @@ The tests are written using pytest. To run the tests, run the `pytest` command i
 
 # <a id="docker"></a>Docker 
 To run the application in a docker container, run the `docker compose up` command while in the root of the project. By default, the application port will be forwarded to host port `8000`. After launching, you can view the application's online documentation at http://127.0.0.1:8000/docs.
+
+# Demo
+
+<image src="./docs/demo.gif">
