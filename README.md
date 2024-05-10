@@ -8,6 +8,7 @@ The service performs calculation of the game score and determines the type of vi
  - [Definitions](#definitions)
  - [Project structure](#projectstructure)
  - [Tests](#tests)
+ - [Docker](#docker)
 
 # <a id="definitions"></a> Definitions
 - `home board` - playing field area from 1 to 6 points.
@@ -38,7 +39,7 @@ The service performs calculation of the game score and determines the type of vi
 
 # <a id="restapi"></a> API
 
-Interactive API documentation (OpenAPI format,) and web user interfaces are available by default at `http://127.0.0.1:8000/docs`
+Interactive API documentation (OpenAPI format,) and web user interfaces are available by default at http://127.0.0.1:8000/docs
 <div align="center">
     <image src="./docs/FastAPI_endpoints.png">
     <p> Fig. 2 - Interactive API documentation</p>
@@ -52,3 +53,6 @@ It is necessary to note that for the calculation the numbering of points is done
 
 # <a id="tests"></a>Tests 
 The tests are written using pytest. To run the tests, run the `pytest` command in the project root directory in the `bash`. The `conftest.py` file is responsible for configuring the tests, in particular the client for intergation tests. The tests themselves, unit tests and intergation tests, are located in the `src\tests`.
+
+# <a id="docker"></a>Docker 
+To run the application in a docker container, run the `docker compose up` command while in the root of the project. By default, the application port will be forwarded to host port `8000`. After launching, you can view the application's online documentation at http://127.0.0.1:8000/docs.
