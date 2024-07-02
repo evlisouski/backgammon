@@ -9,6 +9,8 @@ The service performs calculation of the game score and determines the type of vi
  - [Project structure](#projectstructure)
  - [Tests](#tests)
  - [Docker](#docker)
+ - [Make](#make)
+ - [Demo](#demo)
 
 # <a id="definitions"></a> Definitions
 - `home board` - playing field area from 1 to 6 points.
@@ -71,6 +73,16 @@ The tests are written using pytest. To run the tests, run the `pytest` command i
 # <a id="docker"></a>Docker 
 To run the application in a docker container, run the `docker compose up` command while in the root of the project. By default, the application port will be forwarded to host port `8000`. After launching, you can view the application's online documentation at http://127.0.0.1:8000/docs.
 
-# Demo
+
+# <a id="make"></a>Make 
+Use a `make up` to run the application with tests in a docker container. 
+Use `make stop` to stop the containers.
+Use `make down` to down the containers. 
+Use `make rm` to remove containers and images.
+Use `make test` to run the tests only (without docker compose).
+
+
+
+# <a id="demo"></a>Demo 
 
 <image src="./docs/demo.gif">
