@@ -2,8 +2,9 @@ import uuid
 from enum import Enum
 from typing import Dict, List, Optional
 from uuid import UUID
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from typing_extensions import Annotated
+from src.exceptions import PointDuplication, IncorrectNumberOfCheckers
 
 
 class SBoardPoint(BaseModel):
@@ -20,6 +21,20 @@ class SBoard(BaseModel):
 class SGameResultInput(BaseModel):
     board: SBoard
     start_position: Dict[UUID, Annotated[int, Field(ge=0, le=23)]] = {uuid.uuid4(): 1, }
+
+    @field_validator('board')
+    def check_duplication_of_point_numbers(cls, board: SBoard):
+        point_numbers = [point.number for point in board.points]
+        if len(point_numbers) != len(set(point_numbers)):
+            raise PointDuplication
+        return board
+
+    @field_validator("board")
+    def check_incorrect_number_of_checkers(cls, board: SBoard):
+        total_checkers = sum(point.checkers_count for point in board.points)
+        if total_checkers > 15:
+            raise IncorrectNumberOfCheckers
+        return board
 
 
 class GameWinType(str, Enum):
